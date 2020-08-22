@@ -1,0 +1,236 @@
+# Criação de Vetores
+
+vendas<-c(12,15,3,5)
+meses<-c("Jan","Fev","Mar","Abri")
+vendas2<- scan()
+Gênero <- c("Masculino","Feminino")
+
+# Acessando os elementos de um vetor
+
+vendas
+meses
+vendas[1]
+vendas[4]
+vendas[c(1,3)]
+vendas[1:3]
+# Modificando o vetor
+# o vetor vendas foi criado nas aulas anteriores
+vendas[3] <- 13
+vendas[4] <- 15
+
+vendas[c(1,4)] <- c(0,90)
+vendas[2:4] <- c(40,35,28)
+
+meses[3:4] <- c("Março","Abril")
+
+vendas <- vendas[-4]
+
+vendas[4] <-70
+
+vendas[5:7] <- c(23,43,15)
+
+# Operações com Vetores
+
+vendas  #criado em aulas anteiores
+
+length(vendas)
+
+vendas + 2
+vendas * 2
+vendas / 2
+vendas - 2
+
+vendas ^ 2
+
+log(vendas)
+mean(vendas)
+max(vendas)
+min(vendas)
+sqrt(vendas)
+sort(vendas)
+sort(vendas,decreasing=T)
+
+vendas < - vendas + vendas*2
+
+# União, Interseção e Diferenças entre vetores
+
+
+
+vendedor1<-c("Nike","Adidas","Olympikus")
+
+vendedor2<-c("Adidas","Mizuno","Topper")
+
+union(vendedor1,vendedor2)
+intersect(vendedor1,vendedor2)
+setdiff(vendedor2,vendedor1)
+setdiff(vendedor1,vendedor2)
+
+arroz_marcas<-c("Camil","Tio João","Prato Fino")
+feijão_marcas<-c("Kicaldo","Milano","Urbano")
+
+interaction(arroz_marcas,feijão_marcas)
+
+# Vetores Lógicos 
+
+produtos<-c("TV","Refrigerador","Notebook","Celular")
+quantidades<-c(30,36,20,15)
+
+quantidades > 10
+quantidades >= 20
+quantidades < 10
+quantidades <= 20
+quantidades == 25
+quantidades != 25
+
+quantidades2<-quantidades*2
+
+
+quantidades == quantidades2
+quantidades != quantidades2
+quantidades > quantidades2
+quantidades < quantidades2
+
+quantidades[3]==60
+
+produtos == "TV"
+sum(produtos == "TV")
+sum(quantidades)
+
+# Matrizes - Criação usando vetores
+
+produtos  #criado nas aulas anteriores
+quantidades #criado nas aulas anteriores
+
+vendas<-cbind(produtos,quantidades)
+vendas<-rbind(produtos,quantidades)
+
+# Matrizes usando o matrix()
+
+matrix(1:20, nrow =4 ,ncol=5)
+matrix("Brasil", nrow =4 ,ncol=5)
+matrix(0, nrow =4 ,ncol=5)
+
+matrix(1:20, nrow =4 ,ncol=5,byrow = T)
+matrix(1:30, nrow =4 ,ncol=5,byrow = T)
+matrix(1:5, nrow =4 ,ncol=5,byrow = T)
+matrix(1:5, nrow =4 ,ncol=5)
+
+# Operações com Matrizes
+
+
+carlos<-c(120,130,400,230)
+marcos<-c(20,334,420,130)
+maria<-c(22,28,19,10)
+
+vendas_Reais <- cbind(carlos,marcos,maria)
+
+dim(vendas_Reais)[2]
+nrow(vendas_Reais)
+ncol(vendas_Reais)
+
+#dim()[2]  igual a  ncol()
+# dim()[1]  igual a nrow()
+
+vendas_Reais - 2
+vendas_Reais <- vendas_Reais + 5
+
+comissoes<- vendas_Reais*0.10
+comissoes/2
+comissoes ^ 2 
+
+sqrt(comissoes)
+log(comissoes)
+
+sum(comissoes[,1])
+
+mean(comissoes[,1])
+mean(vendas_Reais[,1])
+
+sum(comissoes)
+
+
+Jan<-comissoes*2
+Fev<-comissoes
+
+Jan + Fev
+Jan - Fev
+Jan*Fev
+
+Jan %*% Fev
+Jan %*% Fev[-3,]
+
+dim(Jan)
+dim(Fev[-3,])
+
+
+
+# ACESSANDO uma matriz criada
+
+
+vendas
+
+produtos[3]
+
+
+vendas[1,2]
+vendas[1,]
+vendas[,2]
+vendas[2:4,]
+vendas[2:4,1]
+
+vendas[4,2]
+vendas[2,1]
+
+# Modificando matrizes
+
+
+vendas_Jan<-vendas
+vendas_Fev<-vendas_Jan
+
+vendas_Fev[,2]<- as.numeric(vendas_Jan[,2]) + 2
+
+vendas_Fev[1,1]<-c("Televisor")
+vendas_Fev[3,] <- c("PC",40)
+vendas_Fev[2:4,2] <- c(12,100,30)
+vendas_Fev[c(1,4),1] <- c("TV","Smartphone")
+
+vendas_Fev[,-1]
+vendas_Fev[-2,]
+vendas_Fev[-1,-2]
+
+vendas_Fev <- vendas_Fev[-4,]
+
+# Curiosidades sobre Matrizes
+
+A<-matrix(0,nrow = 5,ncol = 10)
+image(A)
+
+A<-matrix(1:50,nrow = 5,ncol = 10)
+image(A)
+
+contour(A)
+contour(volcano)
+
+persp(A)
+persp(volcano)
+
+# Curiosidades em Matrizes (parte 2)
+
+
+#2 X = 10
+
+solve(2,10)
+
+#3X + 2Y = 8
+#1X + 1Y = 2
+
+linha1<-c(3,2,8)
+linha2<-c(1,1,2)
+A<-rbind(linha1,linha2)
+solve(A[,1:2],A[,3]) #matriz inversa
+
+det(A[,-3])  #determinante
+
+t(A)    # matriz 
+
+
